@@ -31,6 +31,11 @@ setup(
     entry_points={
         'console_scripts': [
             'set_index_book_ids=mlgb.indexer.setIndexBookIDs:setBookIDs',
+            'strip_xml_comments=mlgb.indexer.stripXMLcomments:stripComments',
+            'strip_unwanted_tags=mlgb.indexer.stripUnwantedFormatting:stripUnwantedTags',
+            'write_xml=mlgb.indexer.authortitle_to_xml:writeXML',
+            'write_html=mlgb.indexer.writeHTML:writeAllHTMLFiles',
+            'catalogues_html=mlgb.indexer.cataloguesHTML:writeAllHTMLFiles',
         ],
     },
     classifiers=[
