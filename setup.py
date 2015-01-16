@@ -12,7 +12,7 @@ longdesc = open("README.md").read()
 longdesc += open(os.path.join("docs", "HISTORY.rst")).read()
 
 setup(
-    name='bodleian.vocabularies',
+    name='mlgb.indexer',
     version=version,
     description=description,
     long_description=longdesc,
@@ -22,15 +22,17 @@ setup(
     namespace_packages=['mlgb'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=[],
+    install_requires=[
+        'setuptools',
+    ],
     extras_require={
         'test': ['pytest', ],
     },
-    entry-points={
-        'console-scripts': [
+    entry_points={
+        'mlgb.indexer': [
             'set_index_book_ids = mlgb.indexer.setIndexBookIDs.setBookIDs',
         ]
-    }
+    },
     classifiers=[
         'Programming Language :: Python',
         'License :: Other/Proprietary License',
