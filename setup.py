@@ -26,6 +26,11 @@ setup(
     extras_require={
         'test': ['pytest', ],
     },
+    entry-points={
+        'console-scripts': [
+            'set_index_book_ids = mlgb.indexer.setIndexBookIDs.setBookIDs',
+        ]
+    }
     classifiers=[
         'Programming Language :: Python',
         'License :: Other/Proprietary License',
