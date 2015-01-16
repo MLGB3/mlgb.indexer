@@ -15,8 +15,8 @@ import importIndexedCopies as i
 
 ##=============================================================================
 
-def setBookIDs(): #{
 
+def setBookIDs(): #{
   the_database_connection = None
   the_cursor = None
 

@@ -29,9 +29,9 @@ setup(
         'test': ['pytest', ],
     },
     entry_points={
-        'mlgb.indexer': [
-            'set_index_book_ids = mlgb.indexer.setIndexBookIDs.setBookIDs',
-        ]
+        'console_scripts': [
+            'set_index_book_ids=mlgb.indexer.setIndexBookIDs:setBookIDs',
+        ],
     },
     classifiers=[
         'Programming Language :: Python',
