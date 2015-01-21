@@ -5,7 +5,7 @@ from connection import PASSWORD
 from connection import USERNAME
 
 def get_database_connection():
-    import pdb;pdb.set_trace()
+
     db = MySQLdb.connect(
         host="localhost",
         user=USERNAME,

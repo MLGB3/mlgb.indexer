@@ -37,6 +37,7 @@ setup(
             'write_xml=mlgb.indexer.authortitle_to_xml:writeXML',
             'write_html=mlgb.indexer.writeHTML:writeAllHTMLFiles',
             'catalogues_html=mlgb.indexer.cataloguesHTML:writeAllHTMLFiles',
+            'write_static_html=mlgb.indexer.write_static_mlgb:writeStaticHTML',
         ],
     },
     classifiers=[
