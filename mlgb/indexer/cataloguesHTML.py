@@ -47,6 +47,8 @@ inline_lists = [ 'K', 'R' ] # for Henry de Kirkestede and Registrum Anglie, the 
 
 def writeAllHTMLFiles(): #{
 
+  reload(sys)
+  sys.setdefaultencoding("utf8")
 
   writeOneHTMLFile( 'listbydate' )
 
