@@ -13,11 +13,13 @@ import sys
 import os
 import MySQLdb
 import HTMLParser
+
+from common import virtualenv_root
 import connectToMLGB as c
 from importIndexEntries import biblio_block_start_html, biblio_block_end_html
 
-final_output_dir = '/home/mlgb/sites/mlgb/static/templates/authortitle/'
-work_dir = '/home/mlgb/sites/mlgb/parts/index/work/'
+final_output_dir = virtualenv_root + '/static/templates/authortitle/'
+work_dir = virtualenv_root + '/parts/index/work/'
 
 mlgb_book_url = '/mlgb/book'
 if_editable = '{% if editable %}/e{% endif %}'

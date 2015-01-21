@@ -1,18 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-Read the file 'list.master' and parse the text into fields suitable for use in indexing.
+Read the file 'list.master' and parse the text into fields suitable for use in 
+indexing.
 Save the data in tables 'index_entries' and 'index_entry_books'.
 By Sushila Burgess
 """
-##=====================================================================================
+##=============================================================================
 
 import sys
+
+from common import virtualenv_root
 
 #==================
 # Read-only globals
 #==================
-input_filename  = "/home/mlgb/sites/mlgb/parts/index/list.master" 
-output_filename = "/home/mlgb/sites/mlgb/parts/index/insert_index_entries_and_entry_books.sql" 
+
+input_filename  = virtualenv_root + "/parts/index/list.master" 
+output_filename = virtualenv_root + "/parts/index/insert_index_entries_and_entry_books.sql" 
 
 tab = '\t'
 newline = '\n'
@@ -61,7 +65,7 @@ entry_book_count = None
 problem = None
 already_in_italics = None
 
-##=====================================================================================
+##=============================================================================
 
 def clear_globals(): #{
 
@@ -79,7 +83,7 @@ def clear_globals(): #{
   already_in_italics = False
 #}
 
-##=====================================================================================
+##=============================================================================
 
 def rewriteDataFile(): #{
 
@@ -124,7 +128,7 @@ def rewriteDataFile(): #{
     raise
 #}
 
-##=====================================================================================
+##=============================================================================
 
 def reformat( the_string ): #{
 
@@ -172,7 +176,7 @@ def reformat( the_string ): #{
   return the_string
 #}
 
-##=====================================================================================
+##=============================================================================
 
 def get_main_insert_statement(): #{
 
@@ -180,7 +184,7 @@ def get_main_insert_statement(): #{
             % (entry_id, letter)
   return statement
 #}
-##=====================================================================================
+##=============================================================================
 
 def get_main_update_statement( value ): #{
 
@@ -188,7 +192,7 @@ def get_main_update_statement( value ): #{
             % (current_field, current_field, value, entry_id)
   return statement
 #}
-##=====================================================================================
+##=============================================================================
 
 def get_book_insert_statement( title_of_book, role_in_book = '' ): #{
 
@@ -198,7 +202,7 @@ def get_book_insert_statement( title_of_book, role_in_book = '' ): #{
             % (entry_id, entry_book_count, title_of_book, role_in_book, problem.strip())
   return statement
 #}
-##=====================================================================================
+##=============================================================================
 
 def get_book_update_statement( value ): #{
 
@@ -207,7 +211,7 @@ def get_book_update_statement( value ): #{
   statement += " where entry_id = %d and entry_book_count = %d;" % (entry_id, entry_book_count)
   return statement
 #}
-##=====================================================================================
+##=============================================================================
 
 def is_start_of_new_book( line_of_file ): #{
 
@@ -216,7 +220,7 @@ def is_start_of_new_book( line_of_file ): #{
   else:
     return False
 #}
-##=====================================================================================
+##=============================================================================
 
 def parse_three_part_line( line_of_file ): #{
 
@@ -250,7 +254,7 @@ def parse_three_part_line( line_of_file ): #{
   return primary_name, comment, xref_name
 #}
 
-##=====================================================================================
+##=============================================================================
 
 def parse_two_part_line( line_of_file ): #{ # a comment may be followed by a cross-referenced name
 
@@ -268,7 +272,7 @@ def parse_two_part_line( line_of_file ): #{ # a comment may be followed by a cro
   return comment, xref_name
 #}
 
-##=====================================================================================
+##=============================================================================
 
 def parse_first_line_of_book( value ): #{
 
@@ -292,7 +296,7 @@ def parse_first_line_of_book( value ): #{
   return role_in_book, primary_name, comment, xref_name
 #}
 
-##=====================================================================================
+##=============================================================================
 
 def get_initial_letter( value ): #{
 
@@ -309,7 +313,7 @@ def get_initial_letter( value ): #{
   else:
     return ''
 #}
-##=====================================================================================
+##=============================================================================
 
 def process_line( value ): #{
 
@@ -539,7 +543,7 @@ def process_line( value ): #{
   return lines
 #}
 
-##=====================================================================================
+##=============================================================================
 
 if __name__ == '__main__':
 
@@ -551,4 +555,5 @@ if __name__ == '__main__':
 
   rewriteDataFile()
 
-##=====================================================================================
+##=============================================================================
+

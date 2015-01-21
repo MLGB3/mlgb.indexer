@@ -3,20 +3,21 @@
 Output the MLGB3 database in as close a style to the original Ker book as possible.
 By Sushila Burgess
 """
-##=====================================================================================
+##=============================================================================
 
 import sys
 sys.path.append( '/home/mlgb/sites/mlgb/parts/index' )
 import os
 import MySQLdb
 
+from common import virtualenv_root
 import connectToMLGB as c
 
 filename_without_path = 'mlgb3.html'
-final_output_dir = '/home/mlgb/sites/mlgb/static/media/pdf/'
-work_dir = '/home/mlgb/sites/mlgb/parts/jobs/'
+final_output_dir = virtualenv_root + '/static/media/pdf/'
+work_dir = virtualenv_root + '/parts/jobs/'
 
-##=====================================================================================
+##=============================================================================
 
 tab = '\t'
 newline = '\n'
@@ -28,7 +29,7 @@ linebreak = '<br />'
 blank_paragraph = '<p>&nbsp;</p>'
 two_spaces = '&nbsp;&nbsp;'
 
-##=====================================================================================
+##=============================================================================
 
 def writeStaticHTML(): #{
 
@@ -61,7 +62,7 @@ def writeStaticHTML(): #{
     raise
 #}
 
-##=====================================================================================
+##=============================================================================
 
 # Get static HTML for later conversion into PDF on command line
 
@@ -201,7 +202,7 @@ def get_list_of_surviving_books(): #{
 
   return html
 #}
-##=====================================================================================
+##=============================================================================
 
 def get_index_by_modern_location(): #{
 
@@ -279,7 +280,7 @@ def get_index_by_modern_location(): #{
 
   return html
 #}
-##=====================================================================================
+##=============================================================================
 
 def startHTML(): #{
   html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" '
@@ -323,7 +324,7 @@ def startHTML(): #{
   html += '<h1>Medieval Libraries of Great Britain III</h1>' + newline
   return html
 #}
-##=====================================================================================
+##=============================================================================
 
 if __name__ == '__main__':
 
@@ -335,4 +336,5 @@ if __name__ == '__main__':
 
   writeStaticHTML()
 
-##=====================================================================================
+##=============================================================================
+

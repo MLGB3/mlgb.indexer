@@ -4,6 +4,7 @@
 import sys
 import MySQLdb
 
+from common import virtualenv_root
 import connectToMLGB as c
 
 entry_fields = [
@@ -150,9 +151,7 @@ def writeXML(): #{
         mlgb_links_lookup[ copy_code ] = [ mlgb_book_id ]
     #}
 
-
-    
-    output_filename = '/home/mlgb/sites/mlgb/parts/index/authortitle_to_solr.xml'
+    output_filename = virtualenv_root + '/parts/index/authortitle_to_solr.xml'
     print 'About to write %s' % output_filename
     outfile_handle = open( output_filename, 'wb' ) # 'wb' allows entry of UTF-8
 
