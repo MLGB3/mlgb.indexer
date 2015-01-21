@@ -45,6 +45,9 @@ letters_with_entries = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I/J', 'K', 'L'
 
 def writeAllHTMLFiles(): #{
 
+  reload(sys)
+  sys.setdefaultencoding("utf8")
+
   print 'Producing output for author/title index menu'
   writeOneHTMLFile( '' )
 
