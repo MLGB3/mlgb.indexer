@@ -34,3 +34,7 @@ local/
 # OSX
 .DS_Store
 
+# ignore the database connection credentials
+
+connection.py
+
