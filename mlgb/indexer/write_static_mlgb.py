@@ -6,7 +6,7 @@ By Sushila Burgess
 ##=============================================================================
 
 import sys
-sys.path.append( '/home/mlgb/sites/mlgb/parts/index' )
+
 import os
 import MySQLdb
 

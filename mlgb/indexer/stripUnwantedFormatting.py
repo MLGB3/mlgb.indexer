@@ -11,7 +11,7 @@ By Sushila Burgess
 ##=============================================================================
 
 import sys
-sys.path.append( '/home/mlgb/sites/mlgb/parts/index' )
+
 import connectToMLGB as c
 
 problem_tags_start = [ '<div ', '<span ', '<p ', '<a ' ]
