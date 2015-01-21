@@ -1,12 +1,16 @@
 import MySQLdb
-##=====================================================================================
 
-def get_database_connection(): #{
+from connection import DATABASE
+from connection import PASSWORD
+from connection import USERNAME
 
-  db = MySQLdb.connect( host="localhost",  # your host, usually localhost
-                        user="mlgbAdmin",  # your username
-                        passwd="blessing", # your password
-                        db="mlgb")         # name of the database
-  return db
-#}
-##=====================================================================================
+def get_database_connection():
+
+    db = MySQLdb.connect(
+        host="localhost",
+        user=PASSWORD,
+        passwd=USERNAME,
+        db=DATABASE)
+
+    return db
+
