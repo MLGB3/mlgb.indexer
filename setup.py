@@ -24,6 +24,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'MySQL-python',
     ],
     extras_require={
         'test': ['pytest', ],
